@@ -25,4 +25,9 @@ public class Card {
     public String getValue() {
         return this.value;
     }
+
+    @Override
+    public String toString() {
+        return ("%s %s").formatted(this.suit, this.name);
+    }
 }
