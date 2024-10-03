@@ -6,8 +6,10 @@ public class Deck {
 
     // Set constant for the different variables
     private String[] SUIT = 
-        {"DIAMOND", "CLUB", "HEART", };
+        {"DIAMOND", "CLUB", "HEART", "SPADE"};
 
+    private String[] NAME = 
+        {"Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight"}
     public Deck() {
         cards = new Card[52];
     }
