@@ -5,32 +5,33 @@ import java.util.Random;
 public class Deck {
  
     private String[] deck;
+    // Initialise an array of suit
+    private final String[] SUIT = {"Spade", "Heart", "Club", "Diamond"};
+
+    // Initialise an array of value
+    private final String[] VALUE = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
     
     public Deck() {
 
         // Initialise an array of 52 cards
         String[] deck = new String[52];
 
-        // Initialise an array of suit
-        String[] suit = {"Spade", "Heart", "Club", "Diamond"};
+        for (int a = 0; a < SUIT.length; a++) {
+            for (int b = 0; b < VALUE.length; b++ ) {
 
-        // Initialise an array of value
-        String[] value = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
-        
-        for (int a = 0; a < suit.length; a++) {
-            for (int b = 0; b < value.length; b++ ) {
-
-                deck[(a*13) + b] = suit[a] + " " + value[b];
+                deck[(a*13) + b] = SUIT[a] + " " + VALUE[b];
             }  
         }
         this.deck = deck;
     }
+
+
     // Print out cards by its order
     public void printDeck() {
         for (String card : this.deck) {
             System.out.println(card);
-            System.out.println("");
         }
+        System.out.println("");
     }
 
     public void draw() {

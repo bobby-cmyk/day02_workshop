@@ -11,34 +11,10 @@ public class Main {
         // Initialise console
         Console cons = System.console();
 
-        System.out.println("<-- Deck Game Started --> \n Commands: \n * 'END' - to end game \n * 'DRAW' - to draw card \n * 'SHUFFLE' - to shuffle deck \n * 'SHOW' - to show entire deck");
+        UserInterface userInterface = new UserInterface(deck, cons);
 
-        while (true) {
+        userInterface.start();
 
-            String command = cons.readLine().toUpperCase();
-
-            if (command.equals("END")) {
-                break;
-            }
-
-            else if (command.equals("SHOW")) {
-                deck.printDeck();
-            }
-
-            else if (command.equals("DRAW")) {
-                deck.draw();
-            }
-
-            else if (command.equals("SHUFFLE")) {
-                deck.shuffle();
-                System.out.println("");
-            }
-
-            else {
-                System.out.println("Command does not exist!\n");
-            }
-        }
-
-        System.out.println("<-- Deck game ended. --> \n");
-    }
+    }    
+        
 }
