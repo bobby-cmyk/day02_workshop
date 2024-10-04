@@ -37,23 +37,40 @@ public class Deck {
         } 
     }
 
+
+    // OVERLOADING
+
     // Method: Draw a card
     public void draw() {
+        this.draw(1);     
+    }
 
+    // Method: Draw n number of cards
+    public void draw(int number) {
         Random rand = new Random();
 
-        int drawIndex = rand.nextInt(52);
+        if (number < 53) {
+            for (int i = 0; i < number; i++) {
+                int drawIndex = rand.nextInt(52);
+    
+                Card cardDrawn = cards[drawIndex];
+    
+                System.out.println(cardDrawn);
 
-        Card cardDrawn = cards[drawIndex];
+                System.out.println("");
+            }
+        }
 
-        System.out.println(cardDrawn);
+        else {
+            System.out.println("Exceeded maximum number of cards in deck.\n");
+        }
+        
     }
 
     // Method: Shuffle deck
     public void shuffle() {
 
         // for loop over deck 
-
         for (int i = 0; i < cards.length; i++) {
 
             // Initialise the rand
@@ -67,12 +84,16 @@ public class Deck {
             // Change the i variable to temp
             cards[i] = temp;
         } 
+        System.out.println("Deck is shuffled.\n");
     }
 
     public void show() {
+
         for (Card card : cards) {
             System.out.println(card);
         }
+        
+        System.out.println("");
     }
 
     
